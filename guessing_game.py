@@ -1,37 +1,36 @@
 import random
 
-print(f"welcome!\nthis is nbr guessing_game. let's start.")
+print(f"welcome! this is the guessing game. \n you have 7 chances to complete. let's start:")
 
-low = int(input("enter low number:"))
-high = int(input("enter high number:"))
+low = int(input("enter the low bound:"))
+high = int(input("enter the high bound:"))
 
-
-
-print(f"select number between {low} and {high}. Let's start")
+print(f"you have 7 chances to complete between {low} and {high} numbers.")
 
 num = random.randint(low, high)
 
-# chance give
+#allowed chance
 ch = 7
-#guesing 
-gh = 0
 
-while gh < ch:
-    gh += 1
-    guess = int(input("enter you guessing number:"))
+#guessing
+gc = 0
+
+while gc < ch:
+    gc += 1
+    guess = int(input("enter your guess:"))
 
     if guess == num:
-        print(f"correct the num is {num}. the guess is in {ch} attepmt.")
-
+        print(f"correct! you have completed is {num}. you guessed it in {gc} attempt.")
         break
-    elif gh >= ch and guess != num:
-    
-        print(f"sorry the number was {num}. better luck next time!")
 
-    elif guess > num:
-        print("too high! try lower number.")
-
-    elif guess < num:
-        print("'too low! try higher number.")
-        
+    elif gc >= ch and guess != num:
+        print(f"sorry! you missed out.")
     
+    elif gc > ch:
+        print("too high. choose lower number.")
+    
+    elif gc < ch:
+        print("too low. choose higher number.")
+
+    
+
